@@ -1,0 +1,26 @@
+
+
+body {
+    background-image: url(assets/anotherLayout.JPG);
+    background-size: cover;
+    background-position: center;
+}
+.layout {
+ display: flex;
+ height: 100vh;
+ flex-direction: column;
+ justify-content: flex-end;
+ align-items: end;
+}
+
+.card-deck {
+    margin-bottom: 70px;
+    margin-right: 70px;
+}
+
+.shirt-image-size {
+    width: 200px;
+    height: auto;
+    box-shadow: 30px 30px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
