@@ -7,7 +7,6 @@ body {
     margin: 0;
 }
 .layout {
-    /* display: flex; */
     font-weight: 100vw;
     height: 100vh;
     flex-direction: row;
@@ -27,11 +26,7 @@ body {
     margin-bottom: 100px;
 }
 
-
-
 .card-deck {
-    /* margin-top: 350px;
-    margin-left: 90px; */
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -50,9 +45,37 @@ body {
     background-size: cover;
     width: 150px;
     height: 240px;
-    /* margin: 20px; */
-    
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
+.flipped {
+    box-shadow: 10px 10px 20px rgba(255, 225, 165, 0.5);
+    border: 1px solid white;
+}
+
+.myButton {               
+    padding: 15px 25px;               
+    font-size: 20px;  
+    font-style: italic;                
+    background-color: #00000067;        
+    color: rgb(255, 224, 162);                     
+    border-radius: 20px;               
+    cursor: pointer;                  
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s; 
+
+}
+
+.containerField {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
 

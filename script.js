@@ -44,6 +44,7 @@ function flipCard(card) {
     const randomImage = getRandomImage(); 
     card.style.backgroundImage = `url(${randomImage})`; 
     card.classList.add('flipped');
+    checkAllCardsFlipped();
 }
 
 function getRandomImage() {
@@ -52,9 +53,16 @@ function getRandomImage() {
 }
 
 function addButtonToField() {
-    const addButton = document.createElement('button')
-    addButton.classList.add('button');
-    document.getElementById('cardsField').appendChild(addButton);
+    const addButton = document.createElement('button'); // Создаем элемент кнопки
+    addButton.classList.add('myButton');                  // Добавляем класс для стиля кнопки
+    addButton.textContent = 'Посмотреть трактовку расклада'; 
+    document.getElementById('buttonContainer').appendChild(addButton); 
+}
+
+function checkAllCardsFlipped() {
+    if (cardsOnTheField.length === maxCards && cardsOnTheField.every(card => card.classList.contains('flipped'))) {
+        addButtonToField();  
+    }
 }
 
 
