@@ -41,10 +41,14 @@ function addCardToField() {
 }
 
 function flipCard(card) {
+    if (card.classList.contains('flipped')) { //classList.contains -- проверка на наличик этого класса у элемента
+        return alert('Вы не можете изменить вытянутую из колоды карту! Примите свою судьбу! XD'); 
+    } else {
     const randomImage = getRandomImage(); 
     card.style.backgroundImage = `url(${randomImage})`; 
     card.classList.add('flipped');
     checkAllCardsFlipped();
+    }
 }
 
 function getRandomImage() {
@@ -53,16 +57,27 @@ function getRandomImage() {
 }
 
 function addButtonToField() {
-    const addButton = document.createElement('button'); // Создаем элемент кнопки
-    addButton.classList.add('myButton');                  // Добавляем класс для стиля кнопки
-    addButton.textContent = 'Посмотреть трактовку расклада'; 
+    const addButton = document.createElement('button'); 
+    addButton.classList.add('myButton');                  
+    addButton.textContent = 'Получить трактовку расклада'; 
     document.getElementById('buttonContainer').appendChild(addButton); 
+    addButton.addEventListener('click', function() {
+        const myInput = prompt('Трактовка расклада'); 
+        Result(myInput);                       
+    });
 }
 
 function checkAllCardsFlipped() {
-    if (cardsOnTheField.length === maxCards && cardsOnTheField.every(card => card.classList.contains('flipped'))) {
+    if (cardsOnTheField.length === maxCards && cardsOnTheField.every(function(card) {
+        return card.classList.contains('flipped');
+    })) {
         addButtonToField();  
     }
 }
 
-
+function Result(text) {
+    const resultPaper = document.createElement('div');  
+    resultPaper.classList.add('resultPaper');          
+    resultPaper.textContent = `Трактовка вашего расклада: ${text}`;      
+    document.getElementById('layout').appendChild(resultPaper);               
+}
