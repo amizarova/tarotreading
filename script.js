@@ -53,8 +53,8 @@ function getRandomImage() {
 
 function addButtonToField() {
     const addButton = document.createElement('button')
-        addButton.classList.add('button');
-        document.getElementById('cardsField').appendChild(addButton);
+    addButton.classList.add('button');
+    document.getElementById('cardsField').appendChild(addButton);
 }
 
 
